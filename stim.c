@@ -111,7 +111,9 @@ void refreshScreen()
   
   for (int y = 0; y < conf.editor_rows; y++)
   {
-    append(&ab, "~", 1);
+    char rowNum[16];
+    snprintf(rowNum, 4, "%2.0f~", (float) y);
+    append(&ab, rowNum, 4);
     if (y < conf.editor_rows - 1)
     {
       append(&ab, "\r\n", 2);
